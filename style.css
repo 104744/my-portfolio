@@ -285,6 +285,71 @@ img {
 }
 
 /* ==========================================================================
+   个人肖像 Avatar 样式与自适应布局
+   ========================================================================== */
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.home-avatar-wrapper {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  flex-shrink: 0;
+  margin: 0 auto;
+}
+
+.avatar-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.4) 0%, transparent 70%);
+  filter: blur(15px);
+  z-index: 1;
+}
+
+.profile-avatar {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent-color);
+  box-shadow: 0 8px 32px var(--shadow-color);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.profile-avatar:hover {
+  transform: scale(1.03);
+}
+
+/* 手机端排版适配：头像居中并在文字上方 */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .home-avatar-wrapper {
+    width: 180px;
+    height: 180px;
+  }
+
+  .typewriter-container {
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
    4. About Me & Tech Stack
    ========================================================================== */
 .about-section {
@@ -657,22 +722,42 @@ img {
    ========================================================================== */
 .toast-notification {
   position: fixed;
-  bottom: -60px; 
+  bottom: 24px;
   left: 50%;
-  transform: translateX(-50%);
-  background-color: #10b981;
+  transform: translate(-50%, 100px); 
+  opacity: 0;
+  visibility: hidden;
+  background-color: var(--accent-color);
   color: #0b0f19;
   padding: 12px 24px;
   border-radius: 30px;
   font-weight: 600;
   font-size: 0.9rem;
-  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.35);
   z-index: 3000;
-  transition: bottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease, visibility 0.3s ease;
+  max-width: 90vw;
+  text-align: center;
 }
 
 .toast-notification.active {
-  bottom: 32px; 
+  transform: translate(-50%, 0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.form-success-alert {
+  margin-top: 16px;
+  padding: 12px;
+  background-color: rgba(16, 185, 129, 0.15);
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-align: center;
+  transition: opacity 0.5s ease;
 }
 
 /* ==========================================================================
