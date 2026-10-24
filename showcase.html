@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Case Studies | LEONG WEI JIE</title>
+  
+  <!-- 引入与主页相同的质感字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* 核心调色板与排版 (继承主站风格) */
+    :root {
+      --bg-primary: #0b0f19;
+      --bg-secondary: #111827;
+      --text-primary: #f9fafb;
+      --text-secondary: #9ca3af;
+      --accent-color: #10b981;
+      --border-color: #1f2937;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'Fira Code', monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-family: var(--font-sans);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 24px 80px 24px;
+    }
+
+    /* 顶部导航与返回主页按钮 */
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 48px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform 0.2s ease;
+    }
+
+    .back-btn:hover {
+      transform: translateX(-4px);
+    }
+
+    .page-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .page-subtitle {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+    }
+
+    /* 快速跳转锚点药丸按钮组 */
+    .quick-jump-bar {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+      padding: 16px;
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+    }
+
+    .jump-link {
+      padding: 6px 14px;
+      border-radius: 20px;
+      background-color: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .jump-link:hover {
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+    }
+
+    /* 项目卡片板块样式 */
+    .showcase-card {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 48px;
+      scroll-margin-top: 30px; /* 锚点滚动留白 */
+      position: relative;
+    }
+
+    .showcase-tag {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent-color);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    .showcase-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+
+    .showcase-media {
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 24px;
+      border: 1px solid var(--border-color);
+    }
+
+    .showcase-media img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .showcase-desc {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      margin-bottom: 24px;
+    }
+
+    .key-points-box {
+      background-color: var(--bg-primary);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .key-points-box h4 {
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .key-points-box ul {
+      list-style-position: inside;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .key-points-box li {
+      margin-bottom: 6px;
+    }
+
+    /* 页脚 */
+    footer {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      padding-top: 32px;
+      border-top: 1px solid var(--border-color);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- 顶部导航 -->
+    <header class="top-nav">
+      <a href="index.html#projects" class="back-btn">&larr; Back to Portfolio</a>
+      <span style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-secondary);">LEONG WEI JIE</span>
+    </header>
+
+    <h1 class="page-title">Technical Project Deep-Dive</h1>
+    <p class="page-subtitle">Detailed architectural overviews and key implementation summaries for systems and software projects.</p>
+
+    <!-- 快捷跳转栏 -->
+    <div class="quick-jump-bar">
+      <span style="font-size: 0.85rem; color: var(--text-secondary); align-self: center;">Jump to:</span>
+      <a href="#cpu" class="jump-link">CPU Scheduling Analyzer</a>
+      <a href="#database" class="jump-link">Database Concurrency Control</a>
+      <a href="#desktop-app" class="jump-link">Desktop Application</a>
+      <a href="#ocean-cleaner" class="jump-link" >Ocean Cleaner 2D Game </a>
+    </div>
+
+    <!-- ==================== 1. CPU  ==================== -->
+    <article id="cpu" class="showcase-card">
+      <span class="showcase-tag">Operating Systems & Algorithms</span>
+      <h2 class="showcase-title">Round Robin CPU Scheduling Performance Analyzer</h2>
+      
+      <div class="showcase-media">
+        <img src="cpu.png" alt="Round Robin CPU Scheduling Simulation Chart">
+      </div>
+
+      <p class="showcase-desc">
+        This project investigates CPU scheduling behavior under realistic conditions by implementing a custom discrete-event simulation engine in Python. Rather than assuming instantaneous context switching, the simulation explicitly factors in context-switch overhead across varying quantum slices (q = 1ms to 20ms) for 100 randomized processes.
+      </p>
+
+      <div class="key-points-box">
+        <h4>Key Technical Highlights:</h4>
+        <ul>
+          <li><strong>Overhead Quantification:</strong> Evaluated how CPU thrashing degrades performance when time quanta approach context switch duration.</li>
+          <li><strong>Metric Extraction:</strong> Automatically derived Average Turnaround Time (TAT) and Average Waiting Time (AWT).</li>
+          <li><strong>Empirical Recommendation:</strong> Established the optimal quantum threshold that balances responsive times with minimal scheduling overhead.</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- ==================== 2. database ==================== -->
+    <article id="database" class="showcase-card">
+      <span class="showcase-tag">Database Engineering & SQL</span>
+      <h2 class="showcase-title">Database Concurrency Control Simulator</h2>
+      
+      <div class="showcase-media">
+        <img src="database.png" alt="Database Concurrency Simulation Query Output">
+      </div>
+
+      <p class="showcase-desc">
+        An experimental study evaluating multi-user concurrency and data integrity within relational database engines (MariaDB/MySQL). The project demonstrates how transaction isolation levels influence execution anomalies through parallel session scripts executing simultaneous reads and writes.
+      </p>
+
+      <div class="key-points-box">
+        <h4>Key Technical Highlights:</h4>
+        <ul>
+          <li><strong>Phenomena Reproduction:</strong> Successfully simulated and logged Dirty Reads, Non-Repeatable Reads, and Phantom Reads.</li>
+          <li><strong>Isolation Analysis:</strong> Tested performance and lock contention across <code>READ UNCOMMITTED</code>, <code>REPEATABLE READ</code>, and <code>SERIALIZABLE</code>.</li>
+          <li><strong>Concurrency Strategy:</strong> Formulated architectural guidelines for high-throughput transactional applications requiring ACID compliance.</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- ==================== 3. Java desktopapp ==================== -->
+    <article id="desktop-app" class="showcase-card">
+      <span class="showcase-tag">Object-Oriented Programming (Java)</span>
+      <h2 class="showcase-title">Interactive Desktop Application</h2>
+      
+      <div class="showcase-media">
+        <img src="oop.png" alt="Java Swing Desktop Application GUI">
+      </div>
+
+      <p class="showcase-desc">
+        A standalone educational desktop software engineered with pure Java and Java Swing GUI components.The software features multimedia educational content, an interactive quiz game, and persistent scoring structures while adhering strictly to OOP design patterns.
+      </p>
+
+      <div class="key-points-box">
+        <h4>Key Technical Highlights:</h4>
+        <ul>
+          <li><strong>Modular OOP Architecture:</strong> Designed clean separation of concerns using inheritance, encapsulation, and event-driven listeners.</li>
+          <li><strong>Mobile Display Adaptation:</strong> Tailored layout managers and asset dimensions to cleanly render within smartphone-equivalent screen dimensions.</li>
+        </ul>
+      </div>
+    </article>
+       
+    <!-- ==================== 5. 2dgame ==================== -->
+   <article id="ocean-cleaner" class="showcase-card">
+      <span class="showcase-tag">C++ & OpenGL (FreeGLUT) Game Development</span>
+      <h2 class="showcase-title">2D Eco-Shooter Game: Ocean Cleaner</h2>
+
+      <!-- 游戏核心截图展示 -->
+      <div class="showcase-media">
+        <img src="2d.png" alt="2D Ocean Cleaner Game Mechanics">
+      </div>
+
+      <p class="showcase-desc">
+        A classic 2D retro arcade shooter developed from scratch using C++ and OpenGL . Centered around ocean conservation, players control a submarine cannon at the seabed to clear falling municipal and industrial waste from the surface, merging engaging interactive play with ecological awareness.
+      </p>
+
+      <div class="key-points-box">
+        <h4>Key Technical Highlights:</h4>
+        <ul>
+          <li><strong>Custom Collision Engine:</strong> Engineered a raw mathematical 2D circle-to-circle and bounding-box collision detection matrix from scratch, eliminating third-party library footprints.</li>
+          <li><strong>Audio Context & Multi-threading Emulation:</strong> Fully integrated SDL_mixer to handle background spatial music loopings, shooting soundscapes, and scoring trigger playbacks safely compliant with browser user-interaction security guidelines.</li>
+        </ul>
+      </div>
+
+    <footer>
+      <p>&copy; 2026 LEONG WEI JIE. Universiti Malaysia Sarawak (UNIMAS).</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
